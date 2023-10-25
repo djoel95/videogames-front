@@ -1,0 +1,201 @@
+/* @layer reset, base, layout, transitions;
+
+@layer transitions {
+  @keyframes scale-out {
+    to {
+      scale: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  :root {
+    view-transition-name: none;
+  }
+
+  ::view-transition {
+    pointer-events: none;
+  }
+}
+
+@layer layout {
+  body {
+    gird-template-rows: min-content minmax(0, 1fr);
+  }
+
+  .nav {
+    display: flex;
+    padding: 1rem;
+    background: #333;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px dashed #665e5e;
+    box-shadow: 0 1px 0 0 #0c0a0a;
+
+    & li {
+      padding: 0.2em 0.5em;
+      border: 2px dashed transparent;
+      border-radius: 50%;
+      border-radius: 4px;
+      cursor: pointer;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      transition: all 0.2s linear;
+      &:hover,
+      &.active {
+        border-color: #09f;
+        color: #09f;
+      }
+    }
+  }
+
+  .gallery {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100% - 2rem, 280px), 1fr)
+    );
+    gap: 1rem;
+    grid-auto-flow: dense;
+
+    & figure {
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      background: #18141b;
+      box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+      position: relative;
+      &.active {
+        grid-area: span 2 / span 2;
+      }
+    }
+
+    & img {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none outside none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@layer base {
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: "Exo", "Bungee Shade", cursive, Arial, sans-serif;
+    background-color: #110d14;
+    color: #fff;
+    display: grid;
+    align-content: start;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+  
+  .tutorials {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    width: 64px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3f517e;
+    padding: .5rem;
+    display: grid;
+    place-content: center;
+    transition: all .28s linear;
+    
+    &:hover {
+      background:#4161b2;
+    }
+    
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: invert(1);
+    }
+  }
+} */
+.mainContainer{
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.sortedIndicator{
+  text-align: left;
+}
+
+.gameListControls{
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+}
+
+.select{
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.Container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  align-items: center;
+  justify-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.paginacion{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
